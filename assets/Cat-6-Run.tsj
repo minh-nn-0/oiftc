@@ -1,0 +1,14 @@
+{ "columns":3,
+ "image":"..\/..\/..\/..\/Downloads\/Cat-6-Run.png",
+ "imageheight":150,
+ "imagewidth":150,
+ "margin":0,
+ "name":"Cat-6-Run",
+ "spacing":0,
+ "tilecount":9,
+ "tiledversion":"1.11.0",
+ "tileheight":50,
+ "tilewidth":50,
+ "type":"tileset",
+ "version":"1.10"
+}

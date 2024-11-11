@@ -1,0 +1,14 @@
+{ "columns":16,
+ "image":"cats.png",
+ "imageheight":100,
+ "imagewidth":800,
+ "margin":0,
+ "name":"cats",
+ "spacing":0,
+ "tilecount":32,
+ "tiledversion":"1.11.0",
+ "tileheight":50,
+ "tilewidth":50,
+ "type":"tileset",
+ "version":"1.10"
+}
