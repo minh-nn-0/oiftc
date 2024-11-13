@@ -1,0 +1,14 @@
+{ "columns":35,
+ "image":"..\/assets\/UI\/gdb-keyboard-2.png",
+ "imageheight":640,
+ "imagewidth":560,
+ "margin":0,
+ "name":"gdb-keyboard-2",
+ "spacing":0,
+ "tilecount":1400,
+ "tiledversion":"1.11.0",
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset",
+ "version":"1.10"
+}

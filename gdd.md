@@ -26,7 +26,7 @@ Each level present a new house (or room). The player must interact with and clea
 - Move around the house with arrow keys or similar setups
 
 ## Cleaning
-- Cleaning messes involves approaching and pressing an interaction key, which may trigger animations, minigame, popup,... depends on various factors (details at ###Details)
+- Cleaning messes involves approaching and pressing an interaction key, which may trigger animations, minigame, popup,... 
 
 ## Time Management
 - Each cleaning task takes an amount of time, base on tool stat, mess type
@@ -35,9 +35,16 @@ Each level present a new house (or room). The player must interact with and clea
 ## Obstacles
 - A cat, which can run and trip player off
 
-### Details
+## Scoring
+- Each mess type and minigame have base score. Player get score by combining mess type score and minigame net score.
+    - For example: Each dust pile score 10, button_prompt score max 20. each button misses decrease max by 5. After finishing the minigame,
+    player score are 10 + (20 - 5 * misses)
+- A map calculate the max score player can get and make 1 star, 2 star, 3 star respectively with 50%, 70% and 90% max score.
+- Player can surpass max score, maybe by streak/combo, hidden item,...
 
-#### Mini-game
+## Details
+
+### Mini-game
 - **Button-prompt**
     - Player press correct button shown on screen 
 - **Rhythm**
@@ -47,7 +54,7 @@ Each level present a new house (or room). The player must interact with and clea
 - **Rapid Tap**
     - Player rapidly tap one button
 
-#### Messes types
+### Messes types
 
 **TODO**: Should minigame be randomized?
 1. Dust

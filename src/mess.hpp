@@ -6,8 +6,9 @@ namespace mqa
 	template<typename T>
 	struct mess
 	{
-		T _target;
-		int _requirement;
 		minigame::type _trigger;
+		unsigned _base_score;
+		int _requirement;
+		T _target;
 	};
 };
