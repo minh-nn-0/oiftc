@@ -17,8 +17,16 @@ namespace mqa
 	struct game
 	{
 		game();
+		void run();
 		std::filesystem::path game_path();
 		beaver::sdlgame _sdl;
+		void run_menu();
+	};
+
+	enum class SCENES
+	{
+		MAIN_MENU,
+		IN_GAME
 	};
 }
 
