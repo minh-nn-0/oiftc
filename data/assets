@@ -1,0 +1,14 @@
+#Texture
+tileset assets/tileset/muchopixel_interior.png
+spritesheet_player assets/sprites/player.png
+spritesheet_playeraction assets/sprites/playeraction.png
+keyboard assets/UI/gdb-keyboard-2.png
+logo assets/UI/logo_small.png
+menu_bg assets/UI/menu_bg.png
+menu_bg2 assets/UI/menu_bg2.png
+#Audios
+#Fonts
+modak assets/fonts/Modak-Regular.ttf
+playpen assets/fonts/playpensans.ttf
+cnr assets/fonts/ComicShannsMonoNerdFontMono-Bold.otf
+#Maps
