@@ -1,5 +1,7 @@
 #include "mqa.hpp"
 
+std::vector<sdl::texture*> MENU_BUTTON;
+
 void load_assets(mqa::game& game)
 {
 	SDL_Renderer* rdr = game._sdl._sdl._renderer;
@@ -36,7 +38,7 @@ void load_assets(mqa::game& game)
 				else if (type == "music")
 					game._assets.add<sdl::music>(name, sdl::music{path.c_str()});
 				else if (type == "font")
-					game._assets.add<sdl::font>(name, sdl::font{path.c_str(), 80});
+					game._assets.add<sdl::font>(name, sdl::font{path.c_str(), 120});
 				else if (type == "map")
 					game._assets.add<tiled::tilemap>(name, tiled::tilemap{path});
 
@@ -48,6 +50,10 @@ void load_assets(mqa::game& game)
 mqa::game::game(): _sdl("MQA", 1280, 720)
 {
 	load_assets(*this);
+	MENU_BUTTON.push_back(_assets.get<sdl::texture>("menubutton_start"));
+	MENU_BUTTON.push_back(_assets.get<sdl::texture>("menubutton_options"));
+	MENU_BUTTON.push_back(_assets.get<sdl::texture>("menubutton_credits"));
+	MENU_BUTTON.push_back(_assets.get<sdl::texture>("menubutton_quit"));
 	//// Sprites
 	//_sdl._assets.add<sdl::texture>("sprsheet_player", 
 	//		sdl::texture(game_path() / "assets/sprites/player.png", _sdl._sdl._renderer));
@@ -70,15 +76,10 @@ mqa::game::game(): _sdl("MQA", 1280, 720)
 
 float logo_scale {1};
 int menu_selection {0};
+std::vector<std::function<void()>> menu_functions;
+
 bool menu_update(mqa::game& game, float dtr)
 {
-#ifndef NDEBUG
-	ImGui::Begin("DEBUG");
-	ImGui::SliderFloat("logo scale", &logo_scale, 0, 2);
-	ImGui::End();
-#endif
-
-
 	if (game._sdl._ctl.just_pressed(beaver::BTND)) menu_selection++;
 	if (game._sdl._ctl.just_pressed(beaver::BTNU)) menu_selection--;
 	menu_selection = std::clamp(0, menu_selection, 3);
@@ -108,6 +109,18 @@ void menu_draw(mqa::game& game)
 	float start_ypos {logo_dst._pos.y + logo_dst._size.y + 40};
 	for (int i {0}; i != 4; i++)
 	{
+
+	//	sdl::texture* current_button = MENU_BUTTON[i];
+
+	//	mmath::fvec2 button_size {current_button->_width * 50.f / current_button->_height, 50.f};
+
+	//	if (menu_selection == i) button_size = button_size * 1.5;
+	//	float button_ypos = start_ypos + 80 * i; 
+
+	//	sdl::draw(rdr, *current_button, mmath::frect{ {sdl::render_output_size(game._sdl._sdl).x/2.f - button_size.x/2, button_ypos}, {button_size}});
+	
+
+
 		sdl::font* modak = game._assets.get<sdl::font>("cnr");
 		SDL_Surface* temp_surf = TTF_RenderUTF8_Solid(*modak, MENU_TEXT[i].c_str(), {0,0,0,255});
 
@@ -115,7 +128,7 @@ void menu_draw(mqa::game& game)
 		SDL_FreeSurface(temp_surf);
 
 		float text_ypos = start_ypos + 40 * i;
-		mmath::fvec2 dst_size = mmath::ivec2{text_tex._width, text_tex._height} / 2;
+		mmath::fvec2 dst_size = mmath::ivec2{text_tex._width, text_tex._height} / 3;
 		if (menu_selection == i) dst_size = dst_size * 1.5;
 		mmath::frect dst = {._pos = {sdl::render_output_size(game._sdl._sdl).x/2.f - dst_size.x/2.f, text_ypos - dst_size.y/2.f},
 							._size = dst_size};

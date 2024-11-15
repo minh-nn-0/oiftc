@@ -6,6 +6,10 @@ keyboard assets/UI/gdb-keyboard-2.png
 logo assets/UI/logo_small.png
 menu_bg assets/UI/menu_bg.png
 menu_bg2 assets/UI/menu_bg2.png
+menubutton_start assets/UI/batch_Layer1_button.png
+menubutton_options assets/UI/batch_Layer2_button.png
+menubutton_credits assets/UI/batch_Layer3_button.png
+menubutton_quit assets/UI/batch_Layer4_button.png
 #Audios
 #Fonts
 modak assets/fonts/Modak-Regular.ttf
