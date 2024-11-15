@@ -14,12 +14,17 @@ namespace mqa
 		beaver::sprite _spr;
 	};
 
+	inline std::filesystem::path game_path() {return std::filesystem::path(GAME_PATH);};
 	struct game
 	{
 		game();
 		void run();
-		std::filesystem::path game_path();
 		beaver::sdlgame _sdl;
+		beaver::resource::manager<sdl::texture,
+									sdl::font,
+									sdl::music,
+									sdl::soundchunk,
+									tiled::tilemap> _assets;
 		void run_menu();
 	};
 
