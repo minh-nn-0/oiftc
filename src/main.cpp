@@ -6,7 +6,7 @@ int main()
 {
 	mqa::game maingame;
 
-	maingame.run_menu();
+	maingame.run();
 	std::cout << "============== GAME RUNNING \n";
 };
 

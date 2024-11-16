@@ -15,6 +15,15 @@ namespace mqa
 	};
 
 	inline std::filesystem::path game_path() {return std::filesystem::path(GAME_PATH);};
+	
+
+	enum class SCENES
+	{
+		MAIN_MENU,
+		LEVEL_SELECTOR,
+		IN_GAME,
+	};
+	
 	struct game
 	{
 		game();
@@ -25,14 +34,11 @@ namespace mqa
 									sdl::music,
 									sdl::soundchunk,
 									tiled::tilemap> _assets;
-		void run_menu();
+		std::unordered_map<SCENES, beaver::gameloop> _scenes;
+		int menu_selection {0};
+		SCENES _current_scene;
 	};
 
-	enum class SCENES
-	{
-		MAIN_MENU,
-		IN_GAME
-	};
 }
 
 
