@@ -65,9 +65,32 @@
          "width":20,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"Object Layer 1",
+         "objects":[
+                {
+                 "gid":1829,
+                 "height":64,
+                 "id":1,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64,
+                 "x":128,
+                 "y":96
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":5,
- "nextobjectid":1,
+ "nextlayerid":6,
+ "nextobjectid":19,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",
@@ -76,6 +99,10 @@
         {
          "firstgid":1,
          "source":"tileset.tsj"
+        }, 
+        {
+         "firstgid":1787,
+         "source":"player.tsj"
         }],
  "tilewidth":16,
  "type":"map",

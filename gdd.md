@@ -162,6 +162,9 @@ The game encourages experiment and adaptability by coming up with creative solut
 
 
 # Details
+
+![UI_Demo](./In_game_UI_Demo.png)
+
 ## Mechanics
 ### Messes
 ##### Dust
