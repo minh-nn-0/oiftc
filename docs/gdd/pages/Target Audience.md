@@ -1,0 +1,3 @@
+- All ages and gender.
+- Casual gamer
+- Pixel-art lover

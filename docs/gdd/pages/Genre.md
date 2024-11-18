@@ -1,0 +1,3 @@
+- Casual
+- Time Management
+- Action-Puzzle Platformer
