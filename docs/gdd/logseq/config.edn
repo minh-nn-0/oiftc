@@ -420,4 +420,7 @@
  ;;      ;use Percent-encoding for other invalid characters
  :file/name-format :triple-lowbar
  :publishing/all-pages-public? true
- :journal/page-title-format "dd-MM-yyyy"}
+ :journal/page-title-format "dd-MM-yyyy"
+ :graph/forcesettings {:link-dist 30
+ :charge-strength -200
+ :charge-range 1000}}

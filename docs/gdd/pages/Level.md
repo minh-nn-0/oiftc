@@ -6,4 +6,42 @@ tags:: gameplay
 	- Should support [[Theme]]
 	- Should encourage [[experimentation]]
 	- The [[Goals]] should be clear
-	-
+- # Components
+	- [[Player]]
+	- [[Messes]]
+	- [[Objects]]
+	- [[Tools]]
+	- How are level components different / related ? #question #level
+		- #example:
+			- Messes: [[Dust]]
+			- Can use [[Broom]] or [[Vacuum]] or a sheet of paper
+		- [[Messes]] can not be picked up ?
+		- [[Objects]] may or may not be picked up, overall can interact ?
+		- [[Objects]] can be used too ? Like a toothbrush
+		- -> [[Tools]] is [[Objects]] ?
+			- What are their attribute to be functional ?
+				- If it can be used when put in #hotslot, it's a [[Tools]] ?
+					- So [[Tools]] is just something specialize in cleaning, which we may not need to define rigidly, just make some attribute that make it efficient to cleaning ? #idea
+						- #example: What makes a [[Broom]] efficient for handling [[Dust]] ? #question #Mechanic
+		- -> [[Messes]] and [[Tools]] are [[Objects]] ? #question #Mechanic
+			- For example we can identify what object is by their tileid
+			  collapsed:: true
+				- But what about bigger objects like fridge and closet
+					- We can identify by one unique tile (like body of the fridge for example), doesn't have to know whole shape, because that unique tile never goes alone.
+					- We can modify them too by knowing their tilemap relationships (fridge body is at center, their left, right, up, down tile we can defer from that)
+					- -> We know what is under player feet at any given time.
+			- Do we need [[Items]], are [[Items]] also [[Objects]] ?
+				- So whatever can go in [[Inventory]] is [[Items]], or more specifically, [[Inventory]] can only holds [[Objects]] that are [[Items]] ? #idea
+					- So [[Objects]] are scattered in the levels, if they can be picked up and put in [[Inventory]], they become [[Items]]
+						- Do we need that transformation ? What information [[Items]] holds that [[Objects]] don't ?
+							- Literally nothing
+						- If we decided to drop [[Items]] from [[Inventory]], they become [[Objects]] again ?
+							- Doesn't need to be that complicated
+						- #conclusion: Doesn't need distinction between [[Items]] and [[Objects]]. Everything we store in [[Inventory]] is called [[Items]], but that's for calling, not for separate data/type in code
+				- #conclusion: Everything that can be interacted is [[Objects]]. We can identify what **type** it ([[Messes]], [[Tools]]) is by its tile id, then run corresponding [[System]] on it.
+				  id:: 673d9056-3801-43dc-8a06-fe420b69dab2
+					- Much more versatile, now even a wall can be a mess
+					- [[System]] can collect data it needs at the start of each level.
+					- The main distinction is [[Messes]] and the rest
+-
+-

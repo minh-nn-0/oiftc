@@ -1,0 +1,14 @@
+{ "columns":14,
+ "image":"..\/assets\/sprites\/playeraction.png",
+ "imageheight":64,
+ "imagewidth":896,
+ "margin":0,
+ "name":"playeraction",
+ "spacing":0,
+ "tilecount":14,
+ "tiledversion":"1.11.0",
+ "tileheight":64,
+ "tilewidth":64,
+ "type":"tileset",
+ "version":"1.10"
+}

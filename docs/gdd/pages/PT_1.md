@@ -1,9 +1,13 @@
 tags:: prototype
 
 - # Goals
+- TODO Make a few [[System]] for handling data in the level ([[Objects]] -> [[Tools]] and [[Messes]])
+	- What needs to be known at start of the level?
+		- [[Objects]]: What and where they are.
+			- Make dedicated tile layer(s) for objects ? #idea
 - TODO Basic [[Player Movement]]
-	-
-- TODO Basic [[Interactions]]
+- TODO [[Timer]]
+-
 - # Issues
 - # Logs
 	- [[Nov 19th, 2024]]
@@ -21,6 +25,8 @@ tags:: prototype
 				- Player hold **use item** button
 			- -> Interaction are choosen based on
 				- Tool in hand <- If player have 2 items in the hotslot, there have to be 2 buttons
+				  id:: 673c18ea-4d89-4238-9a52-5b6b54fcc7db
 				  How about using one hotslot only (even for sponge or brush) ? #idea
+					- 1 hot slot can be easier to work with, and makes more sense
 				-
 	-

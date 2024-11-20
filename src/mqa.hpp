@@ -4,7 +4,6 @@
 #include <Beaver/core.hpp>
 #include "level.hpp"
 #include "mess.hpp"
-#include "minigame.hpp"
 #include "score.hpp"
 
 namespace mqa
