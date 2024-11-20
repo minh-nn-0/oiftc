@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "mqa.hpp"
+#include "oiftc.hpp"
 
 int main()
 {
