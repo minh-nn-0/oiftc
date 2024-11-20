@@ -6,7 +6,7 @@
 #include "mess.hpp"
 #include "score.hpp"
 
-namespace mqa
+namespace oiftc
 {
 	struct player
 	{

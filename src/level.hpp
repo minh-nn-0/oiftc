@@ -1,8 +1,8 @@
 #pragma once
 
 #include <Beaver/core.hpp>
-
-namespace mqa
+#include "inventory.hpp"
+namespace oiftc
 {
 	struct map
 	{
@@ -16,7 +16,8 @@ namespace mqa
 	{
 		std::vector<tiled::tilemap> _maps;
 		
-		mmath::ivec2 _player_start_pos;
+		beaver::sprite _player_spr;
+		inventory	_player_inventory;
 		std::string _name;
 		unsigned _id;
 		unsigned _timelimit;

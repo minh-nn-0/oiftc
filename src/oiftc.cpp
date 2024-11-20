@@ -2,10 +2,10 @@
 
 //std::vector<sdl::texture*> MENU_BUTTON;
 
-void load_assets(mqa::game& game)
+void load_assets(oiftc::game& game)
 {
 	SDL_Renderer* rdr = game._sdl._sdl._renderer;
-	std::ifstream f{mqa::game_path() / "data/assets"};
+	std::ifstream f{oiftc::game_path() / "data/assets"};
 	std::string lines;
 
 	std::string type;
@@ -26,10 +26,10 @@ void load_assets(mqa::game& game)
 				std::stringstream fields {lines};
 				std::string name, path;
 				fields >> name; fields >> path;
-				if (!std::filesystem::exists(mqa::game_path() / path))
+				if (!std::filesystem::exists(oiftc::game_path() / path))
 					throw std::runtime_error(std::format("{} not found", path));
 
-				path = mqa::game_path() / path;
+				path = oiftc::game_path() / path;
 				if (type == "texture") 
 					game._assets.add<sdl::texture>(name, sdl::texture{path, rdr});
 				else if (type == "audio")
@@ -46,7 +46,7 @@ void load_assets(mqa::game& game)
 		};
 	};
 };
-mqa::game::game(): _sdl("MQA", 1280, 720)
+oiftc::game::game(): _sdl("MQA", 1280, 720)
 {
 	load_assets(*this);
 
@@ -139,7 +139,7 @@ mqa::game::game(): _sdl("MQA", 1280, 720)
 	_current_scene = SCENES::MAIN_MENU;
 };
 
-void mqa::game::run()
+void oiftc::game::run()
 {
 	while (_sdl._running)
 	{

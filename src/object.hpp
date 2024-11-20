@@ -6,7 +6,7 @@
 #include <print>
 
 
-namespace mqa
+namespace oiftc
 {
 	std::unordered_map<int, std::string> _level_objects;
 
