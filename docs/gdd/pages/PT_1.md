@@ -5,8 +5,25 @@ tags:: prototype
 	- What needs to be known at start of the level?
 		- [[Objects]]: What and where they are.
 			- Make dedicated tile layer(s) for objects ? #idea
-- TODO Basic [[Player Movement]]
-- TODO [[Timer]]
+				- Not very necessary
+- DOING ((673e0ed9-b3b9-41a3-8314-4bb6c60600b5))
+  :LOGBOOK:
+  CLOCK: [2024-11-20 Wed 23:33:51]
+  CLOCK: [2024-11-21 Thu 01:35:00]--[2024-11-21 Thu 01:35:00] =>  00:00:00
+  CLOCK: [2024-11-21 Thu 01:35:17]--[2024-11-21 Thu 01:35:18] =>  00:00:01
+  CLOCK: [2024-11-21 Thu 01:35:23]
+  :END:
+-
+-
+- DOING Implement ((673e1ef4-4d9d-46a6-bd3b-b71d3d679e55))
+  :LOGBOOK:
+  CLOCK: [2024-11-21 Thu 01:35:38]
+  CLOCK: [2024-11-21 Thu 01:35:39]
+  :END:
+- DONE [[Timer]]
+  :LOGBOOK:
+  CLOCK: [2024-11-20 Wed 23:33:28]--[2024-11-20 Wed 23:33:28] =>  00:00:00
+  :END:
 -
 - # Issues
 - # Logs
