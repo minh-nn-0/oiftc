@@ -16,5 +16,5 @@
   :LOGBOOK:
   CLOCK: [2024-11-18 Mon 11:05:02]--[2024-11-18 Mon 11:05:03] =>  00:00:01
   :END:
-	- Despite its #chaos and #intensity, *[[OIFTC]]* #whimsical design, playful [[messes]], quirky [[Interactions]] give it a unique character that feels #approachable and fun.
+	- Despite its #chaos and #intensity, *[[OIFTC]]* #whimsical design, playful [[Messes]], quirky [[Interactions]] give it a unique character that feels #approachable and fun.
 -
