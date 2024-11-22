@@ -1,4 +1,4 @@
-tags:: Entity
+tags:: Objects, Entity
 description:: Anything that we wouldn't want to see in a clean house
 
 -
