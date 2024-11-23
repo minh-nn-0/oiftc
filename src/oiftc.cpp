@@ -2,6 +2,9 @@
 
 //std::vector<sdl::texture*> MENU_BUTTON;
 
+
+
+
 void load_assets(oiftc::game& game)
 {
 	SDL_Renderer* rdr = game._sdl._sdl._renderer;
@@ -37,7 +40,7 @@ void load_assets(oiftc::game& game)
 				else if (type == "music")
 					game._assets.add<sdl::music>(name, sdl::music{path.c_str()});
 				else if (type == "font")
-					game._assets.add<sdl::font>(name, sdl::font{path.c_str(), 120});
+					game._assets.add<sdl::font>(name, sdl::font{path.c_str(), 90});
 				else if (type == "map")
 					game._assets.add<tiled::tilemap>(name, tiled::tilemap{path});
 
@@ -50,7 +53,6 @@ oiftc::game::game(): _sdl("MQA", 1280, 720)
 {
 	load_assets(*this);
 
-	//_states._cur = SCENES::MAIN_MENU;
 
 	//_states._transition_table[SCENES::MAIN_MENU][SCENES::LEVEL_SELECTOR] =
 	//	[&]
@@ -76,7 +78,7 @@ oiftc::game::game(): _sdl("MQA", 1280, 720)
 		{
 			if (_sdl._ctl.just_pressed(beaver::BTND)) menu_selection++;
 			if (_sdl._ctl.just_pressed(beaver::BTNU)) menu_selection--;
-			menu_selection = std::clamp(0, menu_selection, 3);
+			menu_selection = std::clamp(0, menu_selection, 4);
 
 			if (_sdl._ctl.just_pressed(beaver::BTNZ))
 			{
@@ -96,7 +98,6 @@ oiftc::game::game(): _sdl("MQA", 1280, 720)
 		._drawf = [&]()
 		{
 			SDL_Renderer* rdr = _sdl._sdl._renderer;
-			static const std::vector<std::string> MENU_TEXT {"Start", "Options", "Credits", "Quit"};
 			SDL_SetRenderDrawColor(rdr, 255,0,0,255);
 			SDL_RenderClear(rdr);
 
@@ -112,13 +113,25 @@ oiftc::game::game(): _sdl("MQA", 1280, 720)
 			sdl::draw(rdr, *_assets.get<sdl::texture>("logo"), logo_dst);
 			// Draw menu text
 			
-			float start_ypos {logo_dst._pos.y + logo_dst._size.y + 40};
-			for (int i {0}; i != 4; i++)
-			{
-				sdl::font* modak = _assets.get<sdl::font>("cnr");
-				sdl::texture text_tex {sdl::render_text_solid(rdr, *modak, MENU_TEXT[i], {0,0,0,255})};
+			static const std::vector<std::string> MENU_TEXT {"Start", "Tutorial", "Options", "Credits", "Quit"};
+			static const std::vector<sdl::texture> MENU_TEXT_TEXTURE {
+						std::ranges::to<std::vector<sdl::texture>>(
+								MENU_TEXT 
+								| std::views::transform([&](auto&& text)
+									{
+										SDL_Renderer* rdr = _sdl._sdl._renderer;
+										sdl::font* cnr = _assets.get<sdl::font>("cnr");
+										return sdl::render_text_blended(rdr, *cnr, text, {0,0,0,255});
+									})
+								)};
 
-				mmath::fvec2 dst_size = mmath::ivec2{text_tex._width, text_tex._height} / 3;
+			float start_ypos {logo_dst._pos.y + logo_dst._size.y + 40};
+			for (int i {0}; i != MENU_TEXT_TEXTURE.size(); i++)
+			{
+				auto& tex = MENU_TEXT_TEXTURE[i];
+				mmath::fvec2 dst_size = mmath::ivec2{tex._width,
+													 tex._height} / 3;
+
 				if (menu_selection == i) dst_size = dst_size * 1.5;
 				
 				float text_ypos = start_ypos + 40 * i;
@@ -126,7 +139,7 @@ oiftc::game::game(): _sdl("MQA", 1280, 720)
 											text_ypos - dst_size.y/2.f},
 									._size = dst_size};
 
-				sdl::draw(rdr, text_tex, dst);
+				sdl::draw(rdr, tex, dst);
 			};
 
 		},

@@ -4,7 +4,7 @@
 
 int main()
 {
-	mqa::game maingame;
+	oiftc::game maingame;
 
 	maingame.run();
 	std::cout << "============== GAME RUNNING \n";

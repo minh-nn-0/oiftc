@@ -8,6 +8,8 @@ namespace oiftc
 {
 	using inventory = std::vector<int>;
 
+	//Hotslot will be the first slot, i.e index 0
+
 	inline auto first_empty_slot(const inventory& iv)
 	{
 		return std::ranges::find(iv, -1); 

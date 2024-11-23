@@ -1,25 +1,45 @@
 #pragma once
 
 #include <Beaver/core.hpp>
-#include "inventory.hpp"
 namespace oiftc
 {
-	struct map
+	
+	// name is same as filename
+	inline std::string get_level_name(const tiled::tilemap& lv)
 	{
-		map(const map&) = default;
-		map(const std::filesystem::path&);
-		
-		tiled::tilemap _tilemap;
+		return lv._path.filename();
 	};
 
-	struct level
+	inline int get_level_time_limit(const tiled::tilemap& lv)
 	{
-		std::vector<tiled::tilemap> _maps;
+		if (lv._properties.count("time limit") == 0)
+			throw std::runtime_error(
+				std::format("level {} doesn't have time limit properties", get_level_name(lv)));
+		return lv._properties["time limit"];
+	};
+
+	inline const tiled::objectlayer& get_data_layer(const tiled::grouplayer& layers)
+	{
+		return std::get<tiled::objectlayer>(*layers.get_layer_by_name("Data"));
+	};
+
+	
+
+	struct door
+	{
+		std::string _from, _to;
+		int _position; // X wise
+	};
+
+	inline const door* door_near_player(const std::vector<door>& doors, float player_x_pos, int range)
+	{
+		if (auto find_rs = std::ranges::find_if(doors, 
+				[=](auto&& pos){return pos + range >= player_x_pos 
+									&& pos - range <= player_x_pos;},
+				&door::_position
+				); find_rs != doors.end())
+			return &*find_rs;
+		else return nullptr;
 		
-		beaver::sprite _player_spr;
-		inventory	_player_inventory;
-		std::string _name;
-		unsigned _id;
-		unsigned _timelimit;
 	};
 };
