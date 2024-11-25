@@ -8,14 +8,6 @@
 
 namespace oiftc
 {
-	struct player
-	{
-		beaver::sprite _spr;
-	};
-
-	inline std::filesystem::path game_path() {return std::filesystem::path(GAME_PATH);};
-	
-
 	enum class SCENES
 	{
 		MAIN_MENU,
@@ -23,6 +15,8 @@ namespace oiftc
 		IN_GAME,
 	};
 	
+
+	inline std::filesystem::path game_path() {return std::filesystem::path(GAME_PATH);};
 	struct game
 	{
 		game();

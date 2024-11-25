@@ -3,7 +3,10 @@
 #include <Beaver/core.hpp>
 namespace oiftc
 {
-	
+
+
+
+
 	// name is same as filename
 	inline std::string get_level_name(const tiled::tilemap& lv)
 	{
@@ -18,12 +21,27 @@ namespace oiftc
 		return lv._properties["time limit"];
 	};
 
-	inline const tiled::objectlayer& get_data_layer(const tiled::grouplayer& layers)
+	std::vector<tiled::object*> get_room_messes(tiled::tilemap& lv, const std::string& room)
 	{
-		return std::get<tiled::objectlayer>(*layers.get_layer_by_name("Data"));
-	};
+		tiled::grouplayer& room_layers = lv._layerdata.get_layer_by_name<tiled::grouplayer>(room);
 
-	
+		tiled::objectlayer& room_objects = room_layers.get_layer_by_name<tiled::objectlayer>("Objects");
+
+		return std::ranges::to<std::vector<tiled::object*>>(
+				room_objects._objects
+				| std::views::filter([](auto&& object)
+					{
+						return std::get<tiled::tile>(object._object) == 21;
+					})
+				| std::views::transform([](auto&& object)
+					{
+						return &object;
+					}));
+	};
+	inline const tiled::objectlayer& get_data_layer(tiled::grouplayer& layers)
+	{
+		return layers.get_layer_by_name<tiled::objectlayer>("Data");
+	};
 
 	struct door
 	{
@@ -40,6 +58,5 @@ namespace oiftc
 				); find_rs != doors.end())
 			return &*find_rs;
 		else return nullptr;
-		
 	};
 };

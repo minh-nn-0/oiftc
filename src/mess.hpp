@@ -1,12 +1,19 @@
 #pragma once
 
+#include <unordered_map>
+#include <string>
+
 namespace oiftc
 {
-	template<typename T>
-	struct mess
+	namespace dust
 	{
-		unsigned _base_score;
-		int _requirement;
-		T _target;
-	};
+		enum class SIZE
+		{
+			PARTICLE = 1,
+			CLUSTER = 2,
+			LUMP = 4,
+			PILE = 8,
+			DUNE = 16
+		};
+	}
 };
