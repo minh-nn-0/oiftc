@@ -1,0 +1,14 @@
+{ "columns":10,
+ "image":"..\/assets\/sprites\/player.png",
+ "imageheight":640,
+ "imagewidth":640,
+ "margin":0,
+ "name":"player",
+ "spacing":0,
+ "tilecount":100,
+ "tiledversion":"1.11.0",
+ "tileheight":64,
+ "tilewidth":64,
+ "type":"tileset",
+ "version":"1.10"
+}

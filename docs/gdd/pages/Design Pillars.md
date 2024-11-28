@@ -1,0 +1,4 @@
+- Should support [[Theme]]
+- Easy to understand, easy to execute
+- Predictable outcomes
+- Keyboard and Controller friendly

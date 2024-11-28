@@ -1,0 +1,8 @@
+tileid	name	size	icon	can_picked_up
+1179	broom	1,2	1141	TRUE
+1407	dustpan	1,1	1407	TRUE
+1330	dustpan_onfloor_empty	1,1	1330	TRUE
+1368	dustpan_onfloor_1	1,1	1368	TRUE
+1406	dustpan_onfloor_2	1,1	1406	TRUE
+1444	dustpan_onfloor_3	1,1	1444	TRUE
+601	trash_bin			FALSE

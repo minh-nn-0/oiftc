@@ -1,0 +1,17 @@
+- **Gameplay**
+	- Each level have an initial amount of [[Messes]], [[Objects]] and [[Tools]]
+	- Player can move around and interact with [[Messes]], [[Objects]] and [[Tools]]
+	- Player can hold only one big **Tool** at any given time
+- **Score**
+	- Score increase if
+		- A mess is successfully cleaned
+		- A tool is repaired
+		- An object is used effectively
+		- An optional goal achieved
+	- Score decrease if
+		- A mess escalates or spreads
+		- A tool malfuncions
+- **Winning conditions**
+	- Player earns at least 1 star when timer ends
+- **Losing conditions**
+	- A [[Disaster]] appears.

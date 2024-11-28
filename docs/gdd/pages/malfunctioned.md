@@ -1,0 +1,1 @@
+- Malfunctioned [[Tools]] or [[Objects]] are temporarily or permanently unavailable for the current level

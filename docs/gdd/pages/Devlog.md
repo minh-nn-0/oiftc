@@ -1,0 +1,6 @@
+- [[21-11-2024]]
+	- [[Dust]] now act more realistically #immersive
+		- ((673ea1b0-a837-4940-9942-e5d412c9512b))
+	- Come up with another [[Objects]] type: [[Station]]
+	- Brainstorming how should [[Scoring]] works
+		- ((673eb092-d88c-4148-b0e5-265b5f1d4ba2))
